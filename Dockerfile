@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:experimental
 
 MAINTAINER Adriaan de Jonge <adejonge@xebia.com>
 
