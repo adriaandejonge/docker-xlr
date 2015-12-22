@@ -8,7 +8,6 @@ RUN apt-get install -y openjdk-7-jre-headless unzip wget --no-install-recommends
 
 RUN wget https://dist.xebialabs.com/public/trial/xl-release/xl-release-${version}-server.zip -O /tmp/xlr.zip && unzip /tmp/xlr.zip -d /opt && rm /tmp/xlr.zip
 ADD xlrelease.answers /opt/xl-release-${version}-server/bin/xlrelease.answers
-ADD xl-release-license.lic /opt/xl-release-${version}-server/conf/xl-release-license.lic
 
 WORKDIR /opt/xl-release-${version}-server/bin
 RUN ["./server.sh", "-setup", "-reinitialize", "-force", "-setup-defaults", "./bin/xlrelease.answers"]
