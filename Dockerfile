@@ -2,12 +2,11 @@ FROM debian
 
 MAINTAINER Adriaan de Jonge <adejonge@xebia.com>
 
-ENV version 4.7.0
+ENV version 4.8.0
 RUN apt-get update
 RUN apt-get install -y openjdk-7-jre-headless unzip wget --no-install-recommends
 
-
-RUN wget https://download.xebialabs.com/files/Generic/xl-release-${version}-server.zip -O /tmp/xlr.zip && unzip /tmp/xlr.zip -d /opt && rm /tmp/xlr.zip
+RUN wget https://dist.xebialabs.com/public/trial/xl-release/xl-release-${version}-server.zip -O /tmp/xlr.zip && unzip /tmp/xlr.zip -d /opt && rm /tmp/xlr.zip
 ADD xlrelease.answers /opt/xl-release-${version}-server/bin/xlrelease.answers
 ADD xl-release-license.lic /opt/xl-release-${version}-server/conf/xl-release-license.lic
 
